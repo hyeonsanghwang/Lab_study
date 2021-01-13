@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         process(input_mat.getNativeObjAddr(), result_mat.getNativeObjAddr());
         return result_mat;
     }
-    
+
 
     /*  Permission methods  */
     private void checkPermission() {
