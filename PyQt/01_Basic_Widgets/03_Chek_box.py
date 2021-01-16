@@ -30,15 +30,12 @@ def checkbox_event():
     checkbox.setText(text + "!!!!")
 
 
-def set_widget_property(widget):
-    widget.clicked.connect(checkbox_event)
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     checkbox = QCheckBox('Check box')
     checkbox.show()
-    # set_widget_property(checkbox)
+
+    checkbox.clicked.connect(checkbox_event)
 
     app.exec_()

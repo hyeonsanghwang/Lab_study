@@ -7,12 +7,9 @@ pip install PyQt5
 
 import sys
 
-from PyQt5.Qt import Qt
-from PyQt5.QtCore import QDir
-from PyQt5.QtGui import QPixmap, QStandardItemModel
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QTreeView, QFileSystemModel
 from PyQt5.QtWidgets import QLabel
-from PyQt5.QtWidgets import QPushButton
 
 
 def double_click_event(index):
@@ -47,6 +44,7 @@ if __name__ == '__main__':
     tree_view.doubleClicked.connect(double_click_event)
 
     label = QLabel("label")
+    label.resize(600, 400)
     label.show()
 
     app.exec_()

@@ -9,7 +9,7 @@ import sys
 
 from PyQt5.Qt import Qt
 from PyQt5.QtGui import QStandardItemModel
-from PyQt5.QtWidgets import QApplication, QTreeView, QAbstractItemView
+from PyQt5.QtWidgets import QApplication, QTreeView
 from PyQt5.QtWidgets import QPushButton
 
 

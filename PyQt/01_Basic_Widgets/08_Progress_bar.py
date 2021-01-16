@@ -24,8 +24,8 @@ if __name__ == '__main__':
 
     progress = QProgressBar()
 
-    progress.setRange(0, 100)
-    progress.setValue(0)
+    progress.setRange(1, 100)
+    progress.reset()
     # or
     # progress.setRange(0, 0)
 
