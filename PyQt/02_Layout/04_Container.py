@@ -37,7 +37,8 @@ if __name__ == '__main__':
 
     # Tab
     tab_widget = QTabWidget()
-    tab_widget.addTab(QPushButton('Tab1 button'), 'Tab 1')
+    tab1 = QPushButton('Tab1 button')
+    tab_widget.addTab(tab1, 'Tab 1')
 
     tab2 = QWidget()
     tab_layout = QVBoxLayout(tab2)

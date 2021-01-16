@@ -15,7 +15,7 @@ if __name__ == '__main__':
     window = QWidget()
     window.resize(500, 500)
 
-    layout = QVBoxLayout(window)
+    layout = QHBoxLayout(window)
     window.setLayout(layout)
 
     label1 = QLabel("label1", window)

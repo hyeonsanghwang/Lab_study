@@ -17,6 +17,7 @@ class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
 
+        self.resize(500, 500)
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
