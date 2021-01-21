@@ -2,3 +2,4 @@ contents.txt
 */.idea/*
 Android/libs/*
 자료/*
+PyQt/mnist_data/*

@@ -7,6 +7,7 @@ from PyQt5 import uic
 from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
+
 form_class = uic.loadUiType('window.ui')[0]
 class MainWindow(QMainWindow, form_class):
     pixmap_change_signal = pyqtSignal(np.ndarray)

@@ -1,9 +1,6 @@
 import sys
 
-try:
-    from cv2 import cv2
-except ImportError:
-    pass
+import cv2
 import numpy as np
 from PyQt5 import QtGui
 from PyQt5 import uic
