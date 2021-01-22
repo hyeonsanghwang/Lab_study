@@ -46,7 +46,7 @@ if __name__ == '__main__':
     tree_view.clicked.connect(click_event)
 
     model.insertRow(0)
-    model.setData(model.index(0, 0), 'test.py')
+    model.setData(model.index(0, 0), 'main_window.py')
     model.setData(model.index(0, 1), '100')
     model.setData(model.index(0, 2), 'python script')
 

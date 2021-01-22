@@ -3,3 +3,4 @@ contents.txt
 Android/libs/*
 자료/*
 PyQt/mnist_data/*
+*.pt

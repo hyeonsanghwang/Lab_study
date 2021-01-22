@@ -1,3 +1,11 @@
+"""
+ * Requirements
+
+pip install PyQt5
+pip install opencv-python
+
+"""
+
 import sys
 
 import cv2
@@ -10,7 +18,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 
 form_class = uic.loadUiType('webcam_window.ui')[0]
 class MainWindow(QMainWindow, form_class):
-    pixmap_change_signal = pyqtSignal(np.ndarray)
 
     def __init__(self):
         super().__init__()

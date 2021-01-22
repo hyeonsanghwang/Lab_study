@@ -1,16 +1,18 @@
+"""
+ * Requirements
+
+pip install PyQt5
+pip install opencv-python
+
+"""
+
 import sys
 
-from PyQt5.QtGui import QPixmap
-
-try:
-    from cv2 import cv2
-except ImportError:
-    pass
+import cv2
 import numpy as np
 from PyQt5 import QtGui
 from PyQt5 import uic
-from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileSystemModel, QRadioButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileSystemModel
 
 form_class = uic.loadUiType('file_window.ui')[0]
 class MainWindow(QMainWindow, form_class):

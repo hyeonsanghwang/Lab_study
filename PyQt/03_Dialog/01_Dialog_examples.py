@@ -74,7 +74,7 @@ class MainWindow(QWidget):
             self.label_text.setText(text)
 
     def file_dialog_event(self):
-        ret = QFileDialog.getExOpenFileName(self, 'Select file')
+        ret = QFileDialog.getOpenFileName(self, 'Select file')
         print(ret)
 
         path = ret[0]

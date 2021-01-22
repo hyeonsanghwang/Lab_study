@@ -15,7 +15,7 @@ from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
-form_class = uic.loadUiType('window.ui')[0]
+form_class = uic.loadUiType('ui/window.ui')[0]
 class MainWindow(QMainWindow, form_class):
     pixmap_change_signal = pyqtSignal(np.ndarray)
 
@@ -23,7 +23,12 @@ class MainWindow(QMainWindow, form_class):
         super().__init__()
         self.setupUi(self)
 
+        ################################################################################################################
+        self.detector = cv2.CascadeClassifier('model/haarcascade_frontalface_default.xml')
+        ################################################################################################################
+
         self.video_thread = VideoThread()
+        self.video_thread.set_detector(self.detector)
         self.video_thread.image_change_signal.connect(self.set_image)
         self.video_thread.start()
 
@@ -41,6 +46,9 @@ class MainWindow(QMainWindow, form_class):
 class VideoThread(QThread):
     image_change_signal = pyqtSignal(np.ndarray)
 
+    def set_detector(self, detector):
+        self.detector = detector
+
     def run(self):
         self.capture = True
         cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
@@ -48,6 +56,16 @@ class VideoThread(QThread):
         while self.capture:
             ret, frame = cap.read()
             if ret:
+                ########################################################################################################
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                faces = self.detector.detectMultiScale(gray, 1.3, 5)
+                for (x, y, w, h) in faces:
+                    sx = x
+                    sy = y
+                    ex = x + w
+                    ey = y + h
+                    cv2.rectangle(frame, (sx, sy), (ex, ey), (0, 255, 0), 3)
+                ########################################################################################################
                 self.image_change_signal.emit(frame)
 
 

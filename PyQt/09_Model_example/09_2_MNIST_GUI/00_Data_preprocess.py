@@ -1,3 +1,17 @@
+"""
+ * Requirements
+
+pip install PyQt5
+pip install opencv-python
+
+https://pytorch.org/
+
+conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch
+or
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
+
+"""
+
 import cv2
 import numpy as np
 
