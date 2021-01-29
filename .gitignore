@@ -1,4 +1,5 @@
 contents.txt
+.idea/*
 */.idea/*
 */__pycache__/*
 Android/libs/*
